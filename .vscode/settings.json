@@ -1,0 +1,8 @@
+{
+  "material-icon-theme.folders.associations": {
+    "angular-app": "Angular",
+    "next-app": "Next",
+    "vue-app": "Vue",
+    "react-app": "React-components"
+  }
+}
