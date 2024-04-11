@@ -3,6 +3,9 @@
     "angular-app": "Angular",
     "next-app": "Next",
     "vue-app": "Vue",
-    "react-app": "React-components"
+    "react-app": "React-components",
+    "nginx": "Config",
+    "react": "React-components",
+    "next": "Next"
   }
 }
