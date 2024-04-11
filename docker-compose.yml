@@ -1,0 +1,53 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - '80:80'
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - angular
+      - react
+      - next
+      - vue
+
+  angular:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/angular/Dockerfile
+    container_name: angular
+    volumes:
+      - ./apps/angular:/app
+    ports:
+      - '4200:4200'
+
+  react:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/react/Dockerfile
+    container_name: react
+    volumes:
+      - ./apps/react:/app
+    ports:
+      - '3000:3000'
+
+  next:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/next/Dockerfile
+    container_name: next
+    volumes:
+      - ./apps/next:/app
+    ports:
+      - '3001:3001'
+
+  vue:
+    build:
+      context: .
+      dockerfile: ./dockerfiles/vue/Dockerfile
+    container_name: vue
+    volumes:
+      - ./apps/vue:/app
+    ports:
+      - '8080:8080'
